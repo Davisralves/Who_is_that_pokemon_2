@@ -1,0 +1,14 @@
+:root {
+	--home_page_color: gainsboro;
+	--home_page_footer: white;
+}
+.home_page {
+	width: 100px;
+	height: 100px;
+	background-color: var(--home_page_color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
