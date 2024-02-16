@@ -1,19 +1,11 @@
 import "./header.css";
-import pikachu_logo from "../../images/game_14079542.png";
-import pokedex_logo from "../../images/pokeball_287221.png";
-import gameboy_logo from "../../images/gameboy_626592.png";
-import { useLocation } from "react-router-dom";
+import pikachu_logo from "../../Images/game_14079542.png";
+import pokedex_logo from "../../Images/pokeball_287221.png";
+import gameboy_logo from "../../Images/gameboy_626592.png";
 import { NavBar } from "../Header/style";
 import HeaderIcon from "../HeaderIcon";
 
 export default function Header() {
-	const { pathname } = useLocation();
-	let homePageNavColor = "white";
-	let homePageFooterColor = "lightgray";
-	// if (pathname == "/") {
-	// 	homePageNavColor = "lightgray";
-	// 	homePageFooterColor = "white";
-	// }
 	return (
 		<NavBar>
 			<HeaderIcon
@@ -21,20 +13,26 @@ export default function Header() {
 				defaultColor="white"
 				footerColor="lightgray"
 				icon={pikachu_logo}
+				alt="pikachu"
 				direction="left"
+				navigateTo="/"
 			/>
 			<HeaderIcon
 				name="Pokedex"
 				defaultColor="white"
 				footerColor="red"
 				icon={pokedex_logo}
+				alt="pokeball"
+				navigateTo="/pokedex"
 			/>
 			<HeaderIcon
 				name="Game"
 				defaultColor="white"
 				footerColor="yellow"
 				icon={gameboy_logo}
+				alt="gameboy"
 				direction="right"
+				navigateTo="/game"
 			/>
 		</NavBar>
 	);

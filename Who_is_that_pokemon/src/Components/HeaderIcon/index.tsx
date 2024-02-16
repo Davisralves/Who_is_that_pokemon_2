@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { ButtonFooter, HomePageButton, Icon } from "../style";
 
 interface IHeaderProps {
@@ -5,6 +6,8 @@ interface IHeaderProps {
 	defaultColor: string;
 	footerColor: string;
 	icon: string;
+	navigateTo: string;
+	alt: string;
 	direction?: string;
 }
 
@@ -14,12 +17,16 @@ export default function HeaderIcon({
 	footerColor,
 	icon,
 	direction,
+	navigateTo,
+	alt,
 }: IHeaderProps) {
 	return (
-		<HomePageButton $background={defaultColor}>
-			<Icon src={icon} />
-			<div>{name}</div>
-			<ButtonFooter $background={footerColor} $direction={direction} />
-		</HomePageButton>
+		<NavLink to={navigateTo}>
+			<HomePageButton $background={defaultColor}>
+				<Icon alt={alt} src={icon} />
+				<div>{name}</div>
+				<ButtonFooter $background={footerColor} $direction={direction} />
+			</HomePageButton>
+		</NavLink>
 	);
 }

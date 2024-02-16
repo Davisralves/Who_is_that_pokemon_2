@@ -4,11 +4,21 @@ import "./index.css";
 import App from "./App/App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Pokedex from "./Components/Pokedex";
+import Game from "./Components/Game";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App />,
+	},
+	{
+		path: "/pokedex",
+		element: <Pokedex />,
+	},
+	{
+		path: "/game",
+		element: <Game />,
 	},
 ]);
 
