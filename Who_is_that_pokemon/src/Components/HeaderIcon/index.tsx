@@ -21,7 +21,7 @@ export default function HeaderIcon({
 	alt,
 }: IHeaderProps) {
 	return (
-		<NavLink to={navigateTo}>
+		<NavLink style={{ textDecoration: "none", color: "black" }} to={navigateTo}>
 			<HomePageButton $background={defaultColor}>
 				<Icon alt={alt} src={icon} />
 				<div>{name}</div>
