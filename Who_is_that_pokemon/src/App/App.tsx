@@ -1,11 +1,14 @@
 import Header from "../Components/Header";
 import {
+	BackGround,
 	BullbasaurCard,
 	CentralizedLink,
 	CharmanderCard,
 	FlexComponent,
 	Footer,
 	MainDiv,
+	Pokeball,
+	PokeballBackground,
 	SquirtleCard,
 	SubTitle,
 } from "./style";
@@ -13,13 +16,24 @@ import bullbasaur from "../Images/bullbasaur.png";
 import squirtle from "../Images/squirtle.png";
 import charmander from "../Images/charmander.png";
 import { useState } from "react";
+import "./style.css";
+import { getPokeBallsQuantity } from "../Helpers/getPokeballsQuantity";
 
 function App() {
 	const [selectedPokemon, setSelectedPokemon] = useState("None");
+	console.log(getPokeBallsQuantity(30));
 	return (
 		<main>
 			<Header />
 			<MainDiv>
+				<BackGround>
+					{Array(getPokeBallsQuantity(30))
+						.fill(null)
+						.map(() => (
+							<Pokeball />
+						))}
+				</BackGround>
+
 				<p>
 					Hello, in this web app you can play a game to discover who is the
 					pokemon drawn, also there is a pokedex to check and select the

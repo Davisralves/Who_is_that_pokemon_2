@@ -11,6 +11,8 @@ const selectedBorderShadown = `inset 0 3em 3em gold, 0 0 0 2px gold,
 const hoverBorderShadown = `inset 0 -1em 5em lavender, 0 0 0 2px rgb(190, 190, 190),
 0.3em 0.3em 1em rgba(0, 0, 0, 0.3)`;
 
+const pokeballSizePixel = "30px";
+
 export const MainDiv = styled.div`
 	display: block;
 	text-align: center;
@@ -73,4 +75,49 @@ export const SquirtleCard = styled(CardWithShadown)`
 export const CharmanderCard = styled(CardWithShadown)`
 	background-image: url(${lavaBackGround});
 	background-size: cover;
+`;
+
+export const PokeballBackground = styled.img`
+	width: 100px;
+	background-color: red;
+	border-radius: 30px;
+`;
+
+export const BackGround = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	position: absolute;
+	z-index: -2;
+`;
+
+export const Pokeball = styled.div`
+	--pokeball-size: ${pokeballSizePixel};
+	display: block;
+	filter: opacity(0.1);
+	width: var(--pokeball-size);
+	height: var(--pokeball-size);
+	margin-right: var(--pokeball-size);
+	margin-bottom: var(--pokeball-size);
+	background: radial-gradient(
+			white calc(var(--pokeball-size) / 12),
+			black calc(var(--pokeball-size) / 11) calc(var(--pokeball-size) / 10.5),
+			white calc(var(--pokeball-size) / 10) calc(var(--pokeball-size) / 8),
+			black calc(var(--pokeball-size) / 7.7) calc(var(--pokeball-size) / 6),
+			transparent calc(var(--pokeball-size) / 5.8)
+		),
+		linear-gradient(
+			to bottom,
+			red 0 calc(var(--pokeball-size) / 2.2),
+			black calc(var(--pokeball-size) / 2.2) calc(var(--pokeball-size) / 1.85),
+			white calc(var(--pokeball-size) / 1.85) 100%
+		);
+	background-repeat: repeat-y;
+	border-radius: 50%;
+	border: calc(var(--pokeball-size) / 24) solid black;
+	box-shadow: inset calc(-1 * var(--pokeball-size) / 12)
+		calc(-1 * var(--pokeball-size) / 24) 0 0 rgba(0, 0, 0, 0.2);
+	animation: fall 0.5s ease-in-out 1s,
+		shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3,
+		catch 0.5s ease-out 5.25s forwards;
 `;
